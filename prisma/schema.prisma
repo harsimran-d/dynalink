@@ -5,10 +5,11 @@ generator client {
 datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
 }
 
-model User {
-  id      String   @id @default(cuid())
-  email   String   @unique
+model ShortUrl {
+  id         String   @id @default(cuid())
+  shortId    String   @unique
+  originalUrl String
+  createdAt  DateTime @default(now())
 }

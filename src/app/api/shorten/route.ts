@@ -14,5 +14,5 @@ export async function POST(req: Request) {
     data: { shortId, originalUrl: url },
   });
 
-  return NextResponse.json({ shortUrl: `${process.env.BASE_URL}/${shortId}` });
+  return NextResponse.json({ shortId });
 }
